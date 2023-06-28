@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const UserProfile = () => {
   const [userData, setUserData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName:'',
     email: '',
     phone: '',
     dob: '',
@@ -116,10 +117,21 @@ const UserProfile = () => {
               {/* Profile content */}
               <div className="row" style={{ fontSize: '20px' }}>
                 <div className="col-sm-3">
-                  <h6 className="mb-0">Full Name</h6>
+                  <h6 className="mb-0">First Name</h6>
                 </div>
                 <div className="col-sm-9 text-secondary">
-                  {userData.fullName || 'Loading...'}
+                  {userData.firstName || 'Loading...'}
+                </div>
+              </div>
+              <hr />
+              
+              
+              <div className="row" style={{ fontSize: '20px' }}>
+                <div className="col-sm-3">
+                  <h6 className="mb-0">Last Name</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  {userData.lastName || 'Loading...'}
                 </div>
               </div>
               <hr />
