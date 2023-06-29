@@ -7,7 +7,7 @@ import { faMapMarker, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-ic
 import { faGithub, faCodepen, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import imageSrc from './image.jpg';
 import { Link, useHistory } from 'react-router-dom';
-import FeedbackForm from './Feedback/Feedback';
+
 
 library.add(faMapMarker, faPhone, faEnvelope, faGithub, faCodepen, faTwitter, faInstagram);
 
@@ -80,16 +80,16 @@ const ContactFormtwo = () => {
 
             <hr />
 
-            <div className="button-row">
+            {/* <div className="button-row">
               <Link to="./Components/Reachus/Feedback" className="btn btn-primary button-style">
                 Send Us Your Feedback
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
 
       </div>
-      {showFeedbackForm && (
+      {/* {showFeedbackForm && (
         <div className="feedback-form-overlay">
           <div className="feedback-form-container">
             <button className="close-button" onClick={handleCloseFeedbackForm}>
@@ -98,11 +98,11 @@ const ContactFormtwo = () => {
             <FeedbackForm/>
           </div>
         </div>
-      )}
+      )} */}
 
-      <button className="go-back-button" onClick={handleGoBack}>
+      {/* <button className="go-back-button" onClick={handleGoBack}>
         Go Back
-      </button>
+      </button> */}
     </div>
   );
 };
