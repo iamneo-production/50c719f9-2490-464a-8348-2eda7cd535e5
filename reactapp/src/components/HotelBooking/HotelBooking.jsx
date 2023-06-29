@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from "./ViewHotel.module.css"
+import "./ViewHotel.css"
 const HotelBooking = () => {
   return (
     <div className='container'>

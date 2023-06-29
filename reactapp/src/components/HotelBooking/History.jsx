@@ -1,4 +1,5 @@
 import React from 'react'
+import "./ViewHotel.css"
 import FirstImage from "../images/FirstHotelImage.jpg";
 import SecondImage from "../images/SecondHotelImage.jpg";
 import ThirdImage from "../images/ThirdHotelImage.jpg";
