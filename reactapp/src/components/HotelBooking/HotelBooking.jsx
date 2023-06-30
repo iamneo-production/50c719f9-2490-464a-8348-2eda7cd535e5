@@ -35,19 +35,19 @@ const HotelBooking = () => {
         <div className={`col-lg-8 ${Styles.guestDetails}`}>
                 <div className="mt-3">
                     
-                <label>Name:</label>
+                <label>Name</label>
                     <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your name'/>
                 </div>
                 <div>
                     
-                <label>Email:</label>
+                <label>Email</label>
                 <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your mobile'
                 />
 
                 </div>
                 <div>
     
-                <label>Mobile:</label>
+                <label>Mobile</label>
                 <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your address'/>
 
                 </div>
