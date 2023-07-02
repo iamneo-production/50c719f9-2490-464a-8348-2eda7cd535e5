@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import CartPage from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
-import HotelBooking from "./components/HotelBooking/HotelBooking";
-import History from "./components/HotelBooking/History";
+import HotelBooking from "./components/Hotels/HotelBooking";
+import History from "./components/Hotels/History";
 
 function App() {
   return (
