@@ -1,11 +1,47 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 function Signup() {
 
     const { register, handleSubmit, formState: { errors } } = useForm()
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data); 
+        postData(data);
+    }
+
+    const postData=(data)=>{
+        axios.post('',data).then(
+            (res)=>{
+                console.log(res)
+                toast.success('Signup Successfully', {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        });
+            },(error)=>{
+                console.log(error);
+                toast.error('Signup failed', {
+                    position: "bottom-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    });
+            }
+        )
+    };
+
 
 
 
@@ -81,6 +117,9 @@ function Signup() {
                     </span>
                 </form>
             </div>
+
+        <ToastContainer/>
+
         </>
     )
 }

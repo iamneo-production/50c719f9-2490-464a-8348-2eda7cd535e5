@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import axios from "axios";
+
 import {
   MDBBtn,
   MDBContainer,
@@ -12,13 +16,59 @@ import {
 } from "mdb-react-ui-kit";
 
 function Login() {
+
+
+
+
   const mystyle = {
     backgroundColor: "#E3F4F4",
     borderRadius: "10px",
     boxShadow: "1px 2px 9px #27374D",
   };
+
+  const [data, setdata] = useState({});
+
+  const onsubmit = () => {
+    console.log(data);
+    checkLogin(data);  //check user valid or not
+  }
+
+
+  const checkLogin = (data) => {
+    axios.post('', data).then(
+      (res) => {
+        console.log(res)
+        toast.success('Signup Successfully', {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }, (error) => {
+        console.log(error);
+        toast.error('Signup failed', {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+    )
+  };
+
+
+
   return (
     <MDBContainer className="my-4">
+      <ToastContainer/>
       <MDBCard>
         <MDBRow className="g-0" style={mystyle}>
           <MDBCol md="5">
@@ -49,20 +99,30 @@ function Login() {
 
               <MDBInput
                 wrapperClass="mb-4"
-                label="Email address"
-                id="formControlLg"
+                label="Email"
+                id="email"
                 type="email"
                 size="lg"
+                onChange={
+                  (e) => {
+                    setdata({ ...data, email: e.target.value })
+                  }
+                }
               />
               <MDBInput
                 wrapperClass="mb-4"
                 label="Password"
-                id="formControlLg"
+                id="password"
                 type="password"
                 size="lg"
+                onChange={
+                  (e) => {
+                    setdata({ ...data, password: e.target.value })
+                  }
+                }
               />
 
-              <MDBBtn className="mb-2 px-2" color="dark" size="lg">
+              <MDBBtn className="mb-2 px-2" color="dark" size="lg" onClick={onsubmit}>
                 Login
               </MDBBtn>
               <a className="small text-muted font-weight-bold" href="#!">
@@ -70,16 +130,16 @@ function Login() {
               </a>
               <p className="mb-5 pb-lg-2 font-weight-bold" style={{ color: "#393f81" }}>
                 Don't have an account?{" "}
-                <a href="/signup" style={{ color: "#393f81" }}>
+                <Link to="/signup" style={{ color: "#393f81" }}>
                   Register here
-                </a>
+                </Link>
               </p>
 
               <div className="d-flex flex-row justify-content-start">
                 <a href="#!" className="small text-muted me-1">
                   Terms of use  Privacy policy
                 </a>
-                
+
               </div>
             </MDBCardBody>
           </MDBCol>
