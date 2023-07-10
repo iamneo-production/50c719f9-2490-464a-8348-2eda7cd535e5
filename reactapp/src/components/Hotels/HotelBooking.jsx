@@ -41,14 +41,14 @@ const HotelBooking = () => {
                 <div>
                     
                 <label>Email</label>
-                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your mobile'
+                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your email'
                 />
 
                 </div>
                 <div>
     
                 <label>Mobile</label>
-                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your address'/>
+                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your mobile number'/>
 
                 </div>
 
