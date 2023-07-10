@@ -36,19 +36,19 @@ const HotelBooking = () => {
                 <div className="mt-3">
                     
                 <label>Name</label>
-                    <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your name'/>
+                    <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your Name'/>
                 </div>
                 <div>
                     
                 <label>Email</label>
-                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your email'
+                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your Email'
                 />
 
                 </div>
                 <div>
     
                 <label>Mobile</label>
-                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your mobile number'/>
+                <input type="text" className="form-control col-lg-12 mb-3" placeholder='enter your Mobile Number'/>
 
                 </div>
 
