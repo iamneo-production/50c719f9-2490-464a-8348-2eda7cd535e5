@@ -1,0 +1,51 @@
+.hotel_image {
+  width: 50vw;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.bank_offers {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 30px;
+  position: relative;
+  left: 20%;
+}
+
+.bookNowDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.bookNow {
+  background-color: rgb(112, 112, 240);
+  width: 200px;
+  height: 40px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.history_image {
+  width: 400px;
+  margin-top: 20px;
+}
+
+.history_card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.history_heading {
+  width: 100%;
+  margin: 40px 0 40px 0;
+  text-align: center;
+}
+
+.cancelBtn {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
