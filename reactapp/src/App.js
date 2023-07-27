@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import CartPage from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
 
+
 // import Accordion from "./components/HelpAndSupport/FAQ/faq";
 
 import Success from "./components/Success/Success";
@@ -44,9 +45,11 @@ import { TokenContext } from "./utils/TokenContext";
 import Flightadmin from "./components/flight/FlightBooking/Flightadmin";
 
 
+
 function App() {
   const { decodedToken } = useContext(TokenContext);
   return (
+
 
     <>
       <Router>
@@ -101,6 +104,7 @@ function App() {
         </Routes>
       </Router>
     </>
+
 
   );
 }
