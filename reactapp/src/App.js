@@ -1,29 +1,14 @@
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
 import CartPage from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
-
-
 // import Accordion from "./components/HelpAndSupport/FAQ/faq";
 
 import Success from "./components/Success/Success";
 import Signup from "./components/Signup/Signup";
 import Pay from "./components/Payment/Pay";
-
 import PayHome from "./components/Payment/PayHome";
-
-import PayHome from './components/Payment/PayHome';
-
 // import Signup from "./components/Signup/Signup";
 
 // after pull from rajii
@@ -57,23 +42,16 @@ import { useContext } from "react";
 import { TokenContext } from "./utils/TokenContext";
 import Flightadmin from "./components/flight/FlightBooking/Flightadmin";
 
-
-
 function App() {
   const { decodedToken } = useContext(TokenContext);
   return (
-
-
-
     <>
       <Router>
         <Navbar isLogin={!decodedToken ? false : true} />
-
         <Routes>
           {/* sakshi */}
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<CartPage />} />
-
 
           {/* alok */}
           <Route
@@ -85,11 +63,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/payment" element={<PayHome />} />
-          <Route
-            exact
-            path="/pay"
-            element={<Pay/>}
-          />
+          <Route exact path="/pay" element={<Pay />} />
 
           {/* rajii */}
 
@@ -120,9 +94,6 @@ function App() {
         </Routes>
       </Router>
     </>
-
-
-
   );
 }
 

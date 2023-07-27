@@ -1,29 +1,25 @@
-import React, { useState,useEffect } from 'react'
-import Payment from './Payment'
+import React, { useState, useEffect } from "react";
+import Payment from "./Payment";
+import { useLocation } from "react-router-dom";
 
 function PayHome() {
-    const [data,setdata]=useState({});
-    useEffect(() => {
-        console.log("alok")
-      getData();
-    }, [])
+  const [data, setdata] = useState({});
 
-    const getData=()=>{
+  const location = useLocation();
+  const props = location.state;
 
-    }
-    
   return (
     <Payment
-            facility="hotel"
-            location="Kolkata"
-            username="Alok kumar"
-            travellers="3"
-            address="Dhanbad,Jharkahnd, 828114"
-            balance="$71"
-            date="29/06/2023"
-            total='85'
-          />
-  )
+      facility={props.facility}
+      location={props.location}
+      username={props.username}
+      travellers={props.travellers}
+      address={props.address}
+      balance={props.balance}
+      date={props.date}
+      total={props.total}
+    />
+  );
 }
 
-export default PayHome
+export default PayHome;
