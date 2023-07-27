@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import CartPage from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
+
 // import Accordion from "./components/HelpAndSupport/FAQ/faq";
 
 import Success from "./components/Success/Success";
@@ -42,9 +43,11 @@ import { useContext } from "react";
 import { TokenContext } from "./utils/TokenContext";
 import Flightadmin from "./components/flight/FlightBooking/Flightadmin";
 
+
 function App() {
   const { decodedToken } = useContext(TokenContext);
   return (
+
     <>
       <Router>
         <Navbar isLogin={!decodedToken ? false : true} />
@@ -98,6 +101,7 @@ function App() {
         </Routes>
       </Router>
     </>
+
   );
 }
 
