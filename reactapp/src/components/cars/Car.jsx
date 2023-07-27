@@ -1,10 +1,11 @@
-import React from 'react';
-
-
-const Car = ({ image, Heading, Description, setImageState }) => {
+import React from "react";
+import { Link } from "react-router-dom";
+const Car = ({ image, Heading, Description, seat, setImageState }) => {
   const setWindowLocation = () => {
-    window.localStorage.setItem('currentImage', image);
-    window.localStorage.setItem('Heading', Heading);
+    window.localStorage.setItem("currentImage", image);
+    window.localStorage.setItem("Heading", Heading);
+    window.localStorage.setItem("Description", Description);
+    window.localStorage.setItem("seat", seat);
   };
 
   return (
@@ -16,9 +17,16 @@ const Car = ({ image, Heading, Description, setImageState }) => {
         <div className="col-lg-7">
           <p className="car-name">{Heading}</p>
           <p className="text-justify">{Description}</p>
+          <p className="text-justify">{seat} Seats</p>
           <div className="text-right">
-            <button className="btn btn-primary view-details-btn" onClick={setWindowLocation}>
-              <a href={`/viewDetails/${image}/${Heading}/`} className="text-white">View Details</a>
+            <button
+              className="btn btn-primary view-details-btn"
+              onClick={setWindowLocation}
+            >
+              {/* <a href={`/viewDetails/${image}/${Heading}/`} className="text-white">View Details</a>             */}
+              <Link to="/View" className="text-white">
+                ViewDetails
+              </Link>
             </button>
           </div>
         </div>
