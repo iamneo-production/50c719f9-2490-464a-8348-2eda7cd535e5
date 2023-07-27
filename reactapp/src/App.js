@@ -1,4 +1,13 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from 'react-router-dom';
+
 
 import Navbar from "./components/Navbar/Navbar";
 import CartPage from "./components/Cart/Cart";
@@ -10,7 +19,11 @@ import Login from "./components/Login/Login";
 import Success from "./components/Success/Success";
 import Signup from "./components/Signup/Signup";
 import Pay from "./components/Payment/Pay";
+
 import PayHome from "./components/Payment/PayHome";
+
+import PayHome from './components/Payment/PayHome';
+
 // import Signup from "./components/Signup/Signup";
 
 // after pull from rajii
@@ -51,13 +64,16 @@ function App() {
   return (
 
 
+
     <>
       <Router>
         <Navbar isLogin={!decodedToken ? false : true} />
+
         <Routes>
           {/* sakshi */}
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<CartPage />} />
+
 
           {/* alok */}
           <Route
@@ -104,6 +120,7 @@ function App() {
         </Routes>
       </Router>
     </>
+
 
 
   );
