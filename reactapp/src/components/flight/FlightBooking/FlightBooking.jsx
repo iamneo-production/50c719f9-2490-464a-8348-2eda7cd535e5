@@ -12,7 +12,6 @@ const FlightBooking = () => {
   const price = window.localStorage.getItem("price");
 
   //const [flightData, setFlightData] = useState([]);
-  
 
   const [flightBooking, setFlightBooking] = useState({
     FlightlId: flight_Id_prop,
@@ -29,7 +28,6 @@ const FlightBooking = () => {
     selectedSeats: "",
     passengers: 0,
   });
-  const [selectedSeats, setSelectedSeats] = useState([]);
 
   // destructuring data inside flight state/object
   const {
@@ -76,7 +74,7 @@ const FlightBooking = () => {
         window.location.href = "/payment";
         // Redirect to next page
       } else {
-        alert("Failed to book the flight. Please try again.");
+        alert("Failed to book the hotel. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -84,6 +82,12 @@ const FlightBooking = () => {
     }
   };
 
+  const [selectedSeats, setSelectedSeats] = useState([]);
+
+  // Create a function to update the selected seats state in FlightBooking
+  // const handleSelectedSeatsChange = (selectedSeats) => {
+  //   setSelectedSeats(selectedSeats);
+  // };
 
   const updatedFlightBooking = {
     ...flightBooking,
@@ -127,7 +131,7 @@ const FlightBooking = () => {
               <div className="col-lg-2 card p-3 m-2">
                 <p className="mt-2">From Location</p>
                 <Select
-                  defaultValue="Chennai"
+                  defaultValue="chennai"
                   onChange={(e) => {
                     setFlightBooking({ ...flightBooking, fromLocation: e });
                   }}
@@ -141,28 +145,28 @@ const FlightBooking = () => {
                       label: "Chennai",
                     },
                     {
-                      value: "Bangaloore",
-                      label: "Bangaloore",
+                      value: "Bangloore",
+                      label: "Bangloore",
                     },
                     {
-                      value: "WestBengal",
-                      label: "WestBengal",
+                      value: "Trichy",
+                      label: "Trichy",
                     },
                     {
                       value: "Delhi",
                       label: "Delhi",
                     },
                     {
-                      value: "Mumbai",
-                      label: "Mumbai",
+                      value: "Salem",
+                      label: "Salem",
                     },
                     {
                       value: "Pune",
                       label: "Pune",
                     },
                     {
-                      value: "Kolkata",
-                      label: "Kolkata",
+                      value: "Kolkatta",
+                      label: "Kolkatta",
                     },
                   ]}
                 />
@@ -177,36 +181,36 @@ const FlightBooking = () => {
                   }}
                   options={[
                     {
-                      value: "Hyderabad",
-                      label: "Hyderabad",
-                    },
-                    {
                       value: "Chennai",
                       label: "Chennai",
                     },
                     {
-                      value: "Bangaloore",
-                      label: "Bangaloore",
+                      value: "Vikshakapatnam",
+                      label: "Vikshakapatna",
                     },
                     {
-                      value: "WestBengal",
-                      label: "WestBengal",
-                    },
-                    {
-                      value: "Delhi",
-                      label: "Delhi",
+                      value: "Bangloore",
+                      label: "Bangloore",
                     },
                     {
                       value: "Mumbai",
                       label: "Mumbai",
                     },
                     {
+                      value: "Chennai",
+                      label: "Chennai",
+                    },
+                    {
+                      value: "Delhi",
+                      label: "Delhi",
+                    },
+                    {
                       value: "Pune",
                       label: "Pune",
                     },
                     {
-                      value: "Kolkata",
-                      label: "Kolkata",
+                      value: "Kolkatta",
+                      label: "Kolkatta",
                     },
                   ]}
                 />
