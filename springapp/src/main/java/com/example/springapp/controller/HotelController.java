@@ -1,5 +1,4 @@
 package com.example.springapp.controller;
-
 import com.example.springapp.exception.HotelNotFoundException;
 import com.example.springapp.model.Hotel;
 import com.example.springapp.model.HotelBooking;
@@ -22,21 +21,29 @@ public class HotelController {
   @Autowired
   private HotelBookingRepository hotelBookingRepository;
 
+  // POST
+  // adding hotel
   @PostMapping("/hotel")
   Hotel newHotel(@RequestBody Hotel newHotel) {
     return hotelRepository.save(newHotel);
   }
 
+  // GET
+  //getting all hotels from database
   @GetMapping("/hotels")
   List<Hotel> getAllHotels() {
     return hotelRepository.findAll();
   }
 
+  // GET
+  // get hotel with specific hotelId
   @GetMapping("/hotels/{hotelId}")
   Optional<Hotel> getHotelById(@PathVariable Long hotelId) {
     return hotelRepository.findById(hotelId);
   }
 
+  // UPDATE
+  // update hotel with specific hotelId
   @PutMapping("/hotels/{hotelId}")
   Hotel updateHotel(@RequestBody Hotel hotelRequest, @PathVariable Long hotelId) {
     return hotelRepository.findById(hotelId)
@@ -48,6 +55,8 @@ public class HotelController {
         }).orElseThrow(() -> new HotelNotFoundException(hotelId));
   }
 
+  // DELETE
+  // delete a hotel using hotelId
   @DeleteMapping("/hotels/{hotelId}")
   String deleteHotel(@PathVariable Long hotelId) {
     if (!hotelRepository.existsById(hotelId)) {
@@ -59,6 +68,7 @@ public class HotelController {
   }
 
   // SRS API Endpoints
+  // GET
   @GetMapping("/hotels/search")
   public List<Hotel> searchHotels(@RequestParam(value = "location", required = false) String location,
       @RequestParam(value = "checkInDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
@@ -75,11 +85,13 @@ public class HotelController {
     return hotels;
   }
 
+  // POST
   @PostMapping("/hotel/book")
   public HotelBooking bookHotel(@RequestBody HotelBooking hotelBooking) {
     return hotelBookingRepository.save(hotelBooking);
   }
 
+  // GET
   @GetMapping("/hotels/manage")
   public List<HotelBooking> manageBookings() { // @RequestParam("user-id") Long customerId) {
     // Retrieve and return the list of hotel bookings associated with the specified
@@ -88,7 +100,8 @@ public class HotelController {
     // hotelBookingRepository.findByCustomerId(customerId);
     return hotelBookingRepository.findAll();
   }
-
+ 
+  // PUT
   // @PutMapping("/hotels/manage/{bookingId}")
   // public HotelBooking updateBookingStatus(@PathVariable("bookingId") Long
   // bookingId,

@@ -5,6 +5,7 @@ import HotelSearch from "./HotelSearch";
 import { DatePicker, Select } from "antd";
 import { Link } from "react-router-dom";
 import api from "../../utils/api";
+import defaultImage from "./defaultHotelImage.jpeg";
 
 const HotelHomePage = () => {
   const [imageState, setImageState] = useState("");
