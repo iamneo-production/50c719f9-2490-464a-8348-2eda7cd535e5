@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImage from "./defaultHotelJpeg.jpeg";
+import defaultImage from "./defaultHotelImage.jpeg";
 
 function HotelSearch(props) {
   const onViewDetailsClickSave = () => {

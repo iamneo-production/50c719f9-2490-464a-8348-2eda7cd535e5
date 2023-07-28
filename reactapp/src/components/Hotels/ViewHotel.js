@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./ViewHotel.module.css";
-import defaultImage from "./defaultHotelJpeg.jpeg";
+import defaultImage from "./defaultHotelImage.jpeg";
 const ViewHotel = () => {
   const image = window.localStorage.getItem("currentImage");
   const Heading = window.localStorage.getItem("Heading");
