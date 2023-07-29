@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import "./index.css";
 import App from "./App";
-import 'react-toastify/dist/ReactToastify.css';
-
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { TokenProvider } from "./utils/TokenContext";
 
+const decodedToken = JSON.parse(localStorage.getItem("decodedToken")); // Retrieve decodedToken from localStorage
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    
+    <TokenProvider decodedToken={decodedToken}>
       <App />
-    
+    </TokenProvider>
   </React.StrictMode>
 );
 
