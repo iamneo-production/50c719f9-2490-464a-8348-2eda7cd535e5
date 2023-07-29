@@ -44,4 +44,25 @@ public class AuthenticationService {
         .build();
   }
 
+  public AuthenticationResponse authenticate(AuthenticationRequest request) {
+
+    try {
+      authenticationManager.authenticate(
+          new UsernamePasswordAuthenticationToken(
+              request.getEmail(),
+              request.getPassword()));
+    } catch (AuthenticationException e) {
+      throw new BadCredentialsException("Invalid email or password");
+    }
+
+    var user = userRepository.findByEmail(request.getEmail())
+        .orElseThrow(() -> new IllegalArgumentException("Email not found"));
+
+    var jwtToken = jwtService.generateToken(user);
+
+    return AuthenticationResponse
+        .builder()
+        .token(jwtToken)
+        .build();
+  }
 }
