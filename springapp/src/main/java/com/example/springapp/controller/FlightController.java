@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/flights")
-@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-aabfadfdacaaceacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class FlightController {
 
   @Autowired

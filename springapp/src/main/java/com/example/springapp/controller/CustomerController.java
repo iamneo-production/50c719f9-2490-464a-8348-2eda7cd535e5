@@ -13,7 +13,7 @@ import com.example.springapp.model.Role;
 
 @RestController
 @RequestMapping("/customer")
-@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-aabfadfdacaaceacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class CustomerController {
 
 

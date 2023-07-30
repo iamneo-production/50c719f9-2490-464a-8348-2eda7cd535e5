@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-aabfadfdacaaceacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class HotelController {
 
   @Autowired

@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-aabfadfdacaaceacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 @RequestMapping("/rental_cars")
 
 @RestController

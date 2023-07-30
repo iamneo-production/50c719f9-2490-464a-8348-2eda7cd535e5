@@ -18,7 +18,7 @@ import com.example.springapp.service.BookingService;
 
 @RestController
 @RequestMapping("/booking")
-@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
+@CrossOrigin("https://8081-aabfadfdacaaceacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class BookingController {
 
   @Autowired
