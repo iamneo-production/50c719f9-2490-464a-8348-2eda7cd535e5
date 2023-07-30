@@ -1,14 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({isLogin}) {
+function Navbar({ isLogin }) {
   return (
     <nav
       className="navbar  navbar-expand-sm navbar-dark "
       style={{ backgroundColor: "rgb(3, 2, 46)" }}
     >
-      <Link className="navbar-brand font-weight-bold font-italic text-warning" to="/">
-       Travelista
+      <Link
+        className="navbar-brand font-weight-bold font-italic text-warning"
+        to="/"
+      >
+        Travelista
       </Link>
       <button
         className="navbar-toggler"
@@ -43,26 +48,16 @@ function Navbar({isLogin}) {
               Facilities
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to="#">
+              <Link className="dropdown-item" to="/car">
                 Cars
               </Link>
-              <Link className="dropdown-item" to="#">
+              <Link className="dropdown-item" to="/hotel">
                 Hotels
               </Link>
-              <Link className="dropdown-item" to="#">
+              <Link className="dropdown-item" to="/flight">
                 Flights
               </Link>
             </div>
-          </li>
-          <li className="nav-item">
-            {isLogin?(<Link className="nav-link " to="/">
-              Profile
-            </Link>):(<Link className="nav-link " to="/login">
-              Login
-            </Link>)}
-            {/* <Link className="nav-link " to="/login">
-              Login
-            </Link> */}
           </li>
 
           <li className="nav-item dropdown">
@@ -78,29 +73,37 @@ function Navbar({isLogin}) {
               Help & Support
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <Link className="dropdown-item" to="#">
+              <Link className="dropdown-item" to="/faq">
                 FAQ
               </Link>
-              <Link className="dropdown-item" to="#">
-                R
+              <Link className="dropdown-item" to="/feedback">
+                Feedback
+              </Link>
+              <Link className="dropdown-item" to="/help">
+                Contact us
               </Link>
             </div>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link " to="/history">
+              History
+            </Link>
+          </li>
+          <li className="nav-item">
+            {isLogin ? (
+              <Link className="nav-link " to="/profile">
+                <FontAwesomeIcon icon={faUser} beat />
+              </Link>
+            ) : (
+              <Link className="nav-link " to="/login">
+                Login
+              </Link>
+            )}
+            {/* <Link className="nav-link " to="/login">
+              Login
+            </Link> */}
+          </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-warning my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   );

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
-import CartPage from "./components/Cart/Cart";
+// import CartPage from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
 // import Accordion from "./components/HelpAndSupport/FAQ/faq";
 
@@ -19,10 +19,10 @@ import FeedbackForm from "./components/Feedback/Feedback";
 import ContactFormtwo from "./components/HelpAndSupport/helpandSupport";
 
 // after pull from deepak
-import CarHome from "./components/Cars/CarHome";
-import Carview from "./components/Cars/ViewCar";
-import CarBooking from "./components/Cars/CarBooking";
-import Adminadd from "./components/Cars/Adminadd";
+import CarHome from "./components/cars/CarHome";
+import Carview from "./components/cars/ViewCar";
+import CarBooking from "./components/cars/CarBooking";
+import Adminadd from "./components/cars/Adminadd";
 
 // after pull from moulesh
 import FlightHomePage from "./components/flight/FlightHomePage/HomePage";
@@ -51,7 +51,7 @@ function App() {
         <Routes>
           {/* sakshi */}
           <Route path="/login" element={<Login />} />
-          <Route path="/cart" element={<CartPage />} />
+          {/* <Route path="/cart" element={<CartPage />} /> */}
 
           {/* alok */}
           <Route

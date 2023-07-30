@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import {
   MDBBtn,
@@ -14,12 +15,10 @@ import {
   MDBIcon,
   MDBInput,
 } from "mdb-react-ui-kit";
+import { BASE_URL } from "../../utils/api";
 
 function Login() {
-
-
-
-
+  const navigate = useNavigate();
   const mystyle = {
     backgroundColor: "#E3F4F4",
     borderRadius: "10px",
@@ -30,15 +29,17 @@ function Login() {
 
   const onsubmit = () => {
     console.log(data);
-    checkLogin(data);  //check user valid or not
-  }
+    checkLogin(data); //check user valid or not
+  };
 
-
-  const checkLogin = (data) => {
-    axios.post('', data).then(
+  const checkLogin = async (data) => {
+    await axios.post(`${BASE_URL}/api/v1/auth/login`, data).then(
       (res) => {
-        console.log(res)
-        toast.success('Signup Successfully', {
+        console.log(res);
+        const { token } = res.data;
+        localStorage.setItem("token", token);
+
+        toast.success("Signup Successfully", {
           position: "bottom-left",
           autoClose: 5000,
           hideProgressBar: false,
@@ -48,9 +49,12 @@ function Login() {
           progress: undefined,
           theme: "colored",
         });
-      }, (error) => {
+        navigate("/");
+        window.location.reload();
+      },
+      (error) => {
         console.log(error);
-        toast.error('Signup failed', {
+        toast.error("Signup failed", {
           position: "bottom-left",
           autoClose: 5000,
           hideProgressBar: false,
@@ -61,14 +65,12 @@ function Login() {
           theme: "colored",
         });
       }
-    )
+    );
   };
-
-
 
   return (
     <MDBContainer className="my-4">
-      <ToastContainer/>
+      <ToastContainer />
       <MDBCard>
         <MDBRow className="g-0" style={mystyle}>
           <MDBCol md="5">
@@ -82,11 +84,7 @@ function Login() {
           <MDBCol md="5">
             <MDBCardBody className="d-flex flex-column">
               <div className="d-flex flex-row mt-2">
-                <MDBIcon
-                  fas
-                  icon="fa-3x me-3"
-                  style={{ color: "#ff6219" }}
-                />
+                <MDBIcon fas icon="fa-3x me-3" style={{ color: "#ff6219" }} />
                 <span className="h1 fw-bold mb-0">Login</span>
               </div>
 
@@ -103,11 +101,9 @@ function Login() {
                 id="email"
                 type="email"
                 size="lg"
-                onChange={
-                  (e) => {
-                    setdata({ ...data, email: e.target.value })
-                  }
-                }
+                onChange={(e) => {
+                  setdata({ ...data, email: e.target.value });
+                }}
               />
               <MDBInput
                 wrapperClass="mb-4"
@@ -115,20 +111,24 @@ function Login() {
                 id="password"
                 type="password"
                 size="lg"
-                onChange={
-                  (e) => {
-                    setdata({ ...data, password: e.target.value })
-                  }
-                }
+                onChange={(e) => {
+                  setdata({ ...data, password: e.target.value });
+                }}
               />
 
-              <MDBBtn className="mb-2 px-2" color="dark" size="lg" onClick={onsubmit}>
+              <MDBBtn
+                className="mb-2 px-2"
+                color="dark"
+                size="lg"
+                onClick={onsubmit}
+              >
                 Login
               </MDBBtn>
-              <a className="small text-muted font-weight-bold" href="#!">
-                Forgot password?
-              </a>
-              <p className="mb-5 pb-lg-2 font-weight-bold" style={{ color: "#393f81" }}>
+
+              <p
+                className="mb-5 pb-lg-2 font-weight-bold"
+                style={{ color: "#393f81" }}
+              >
                 Don't have an account?{" "}
                 <Link to="/signup" style={{ color: "#393f81" }}>
                   Register here
@@ -137,9 +137,8 @@ function Login() {
 
               <div className="d-flex flex-row justify-content-start">
                 <a href="#!" className="small text-muted me-1">
-                  Terms of use  Privacy policy
+                  Terms of use Privacy policy
                 </a>
-
               </div>
             </MDBCardBody>
           </MDBCol>
