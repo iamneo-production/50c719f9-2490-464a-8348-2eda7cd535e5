@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 @RequestMapping("/rental_cars")
 
 @RestController

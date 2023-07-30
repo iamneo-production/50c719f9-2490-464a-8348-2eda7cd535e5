@@ -18,7 +18,7 @@ import com.example.springapp.service.BookingService;
 
 @RestController
 @RequestMapping("/booking")
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 public class BookingController {
 
   @Autowired

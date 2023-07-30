@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/flights")
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 public class FlightController {
 
   @Autowired
