@@ -1,14 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar() {
+function Navbar({ isLogin }) {
   return (
     <nav
       className="navbar  navbar-expand-sm navbar-dark "
       style={{ backgroundColor: "rgb(3, 2, 46)" }}
     >
-      <a className="navbar-brand font-weight-bold font-italic text-warning" href="#">
-       Travelista
-      </a>
+      <Link
+        className="navbar-brand font-weight-bold font-italic text-warning"
+        to="/"
+      >
+        Travelista
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -24,9 +30,9 @@ function Navbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Home <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
 
           <li className="nav-item dropdown">
@@ -42,21 +48,16 @@ function Navbar() {
               Facilities
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/car">
                 Cars
-              </a>
-              <a className="dropdown-item" href="#">
+              </Link>
+              <Link className="dropdown-item" to="/hotel">
                 Hotels
-              </a>
-              <a className="dropdown-item" href="#">
+              </Link>
+              <Link className="dropdown-item" to="/flight">
                 Flights
-              </a>
+              </Link>
             </div>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link " href="/login">
-              Login
-            </a>
           </li>
 
           <li className="nav-item dropdown">
@@ -72,29 +73,37 @@ function Navbar() {
               Help & Support
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="/faq">
                 FAQ
-              </a>
-              <a className="dropdown-item" href="#">
-                R
-              </a>
+              </Link>
+              <Link className="dropdown-item" to="/feedback">
+                Feedback
+              </Link>
+              <Link className="dropdown-item" to="/help">
+                Contact us
+              </Link>
             </div>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link " to="/history">
+              History
+            </Link>
+          </li>
+          <li className="nav-item">
+            {isLogin ? (
+              <Link className="nav-link " to="/profile">
+                <FontAwesomeIcon icon={faUser} beat />
+              </Link>
+            ) : (
+              <Link className="nav-link " to="/login">
+                Login
+              </Link>
+            )}
+            {/* <Link className="nav-link " to="/login">
+              Login
+            </Link> */}
+          </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-warning my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </div>
     </nav>
   );
