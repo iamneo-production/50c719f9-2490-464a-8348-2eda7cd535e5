@@ -2,6 +2,7 @@ package com.example.springapp.controller;
 
 import com.example.springapp.exception.CabNotFoundException;
 import com.example.springapp.model.Cab;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.springapp.model.CabBooking;
 import com.example.springapp.repository.CabBookingRepository;
 import com.example.springapp.repository.CabRepository;
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 @RequestMapping("/rental_cars")
 
 @RestController

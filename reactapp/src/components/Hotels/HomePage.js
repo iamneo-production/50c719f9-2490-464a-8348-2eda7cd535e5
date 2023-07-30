@@ -40,16 +40,6 @@ const HotelHomePage = () => {
 
     window.localStorage.setItem("hotellocation", data.location);
 
-
-  // useEffect(() => {
-  //   loadHotels();
-  // },[]);
-
-  // const loadHotels = async() =>{
-  //   const res = await api.get("http://localhost:8081/hotels")
-  //   console.log(res);
-  // }
-
   return (
     <div className="container mt-5">
       <h3>Hotels</h3>

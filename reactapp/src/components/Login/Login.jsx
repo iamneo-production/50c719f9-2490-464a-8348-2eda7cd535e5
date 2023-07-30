@@ -15,6 +15,7 @@ import {
   MDBIcon,
   MDBInput,
 } from "mdb-react-ui-kit";
+import { BASE_URL } from "../../utils/api";
 
 function Login() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function Login() {
   };
 
   const checkLogin = async (data) => {
-    await axios.post("http://localhost:9000/api/v1/auth/login", data).then(
+    await axios.post(`${BASE_URL}/api/v1/auth/login`, data).then(
       (res) => {
         console.log(res);
         const { token } = res.data;

@@ -1,6 +1,7 @@
 package com.example.springapp.controller;
 import com.example.springapp.exception.HotelNotFoundException;
 import com.example.springapp.model.Hotel;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.springapp.model.HotelBooking;
 import com.example.springapp.repository.HotelBookingRepository;
 import com.example.springapp.repository.HotelRepository;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class HotelController {
 
   @Autowired

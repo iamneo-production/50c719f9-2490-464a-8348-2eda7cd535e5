@@ -2,6 +2,7 @@ package com.example.springapp.controller;
 
 import com.example.springapp.exception.FlightNotFoundException;
 import com.example.springapp.model.Flight;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.springapp.model.FlightBooking;
 import com.example.springapp.repository.FlightBookingRepository;
 import com.example.springapp.repository.FlightRepository;
@@ -16,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/flights")
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")
 public class FlightController {
 
   @Autowired

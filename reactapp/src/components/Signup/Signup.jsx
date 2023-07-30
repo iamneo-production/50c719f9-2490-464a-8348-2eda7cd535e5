@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { BASE_URL } from "../../utils/api";
 
 function Signup() {
   const {
@@ -17,7 +18,7 @@ function Signup() {
   };
 
   const postData = (data) => {
-    axios.post("http://localhost:9000/api/v1/auth/users", data).then(
+    axios.post(`${BASE_URL}/api/v1/auth/users`, data).then(
       (res) => {
         console.log(res);
         const { token } = res.data;
