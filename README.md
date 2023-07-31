@@ -12,9 +12,9 @@ To ensure smooth communication between your React frontend and Spring Boot backe
 3. Find line number 3 and update the `BASE_URL` constant with the Spring Boot port URL.
 
 Example:
-javascript
+```javascript
 const BASE_URL = "https://8080-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io"; // Replace this with your Spring Boot port URL
-
+```
 
 ## Update React Port URL in Spring Boot
 
@@ -30,13 +30,13 @@ const BASE_URL = "https://8080-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.e
 4. In each of the above controller classes, locate the `@CrossOrigin` annotation and update the URL with the React application's port URL.
 
 Example:
-java
+```java
 @CrossOrigin("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io") // Replace this with your React application port URL
 @RestController
 @RequestMapping("/api")
 public class CommunicationController {
    // Controller code here
-}
+```}
 
 
 Additionally, in `springapp/src/main/java/com/example/springapp/SpringappApplication.java`, go to line 23 where you will find `.allowedOrigins("https://8081-feabcedadbfcacafaeedeacdfdaeaeaadbdbabf.project.examly.io")`. Update this URL with your React application's port URL.
